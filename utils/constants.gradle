@@ -1,0 +1,12 @@
+ext {
+    projectName = 'AndroidSonatypeLibrary'
+    projectDesc = 'Normal Utils Library'
+
+    githubUrl = 'https://github.com/xuie0000/AndroidSonatypeLibrary'
+
+    mavenGroup = 'com.xuie0000'
+    mavenArtifactId = 'util-tools'
+    mavenVersion = '1.2.2'
+
+    bintrayOrg = 'xuie0000'
+}
