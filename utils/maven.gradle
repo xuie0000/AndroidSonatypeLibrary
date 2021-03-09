@@ -40,12 +40,11 @@ afterEvaluate {
                 version = mavenVersion
 
                 // Two artifacts, the `aar` and the sources
-//                artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
                 artifact androidSourcesJar
 
                 // Self-explanatory metadata for the most part
                 pom {
-                    name = mavenArtifactId
+                    name = artifactId
                     description = 'This is my library, main func is collect some base method to reduce repeat work, quickly published your project,'
                     // If your project has a dedicated site, use its URL here
                     url = 'https://github.com/xuie0000/android-preview'
@@ -71,18 +70,7 @@ afterEvaluate {
                         //分支地址：
                         url = 'https://github.com/xuie0000/AndroidSonatypeLibrary/tree/master'
                     }
-                    // A slightly hacky fix so that your POM will include any transitive dependencies
-                    // that your library builds upon
-//                    withXml {
-//                        def dependenciesNode = asNode().appendNode('dependencies')
-//
-//                        project.configurations.implementation.allDependencies.each {
-//                            def dependencyNode = dependenciesNode.appendNode('dependency')
-//                            dependencyNode.appendNode('groupId', it.group)
-//                            dependencyNode.appendNode('artifactId', it.name)
-//                            dependencyNode.appendNode('version', it.version)
-//                        }
-//                    }
+
                 }
             }
         }
@@ -93,8 +81,8 @@ afterEvaluate {
                 // any other name that's descriptive for you
                 name = "AndroidUtilsLibrary"
 
-                def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-                def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+                def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+                def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
                 // You only need this if you want to publish snapshots, otherwise just set the URL
                 // to the release repo directly
                 url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
