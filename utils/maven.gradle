@@ -39,15 +39,14 @@ afterEvaluate {
                 artifactId = mavenArtifactId
                 version = mavenVersion
 
-                // Two artifacts, the `aar` and the sources
                 artifact androidSourcesJar
 
                 // Self-explanatory metadata for the most part
                 pom {
                     name = artifactId
-                    description = 'This is my library, main func is collect some base method to reduce repeat work, quickly published your project,'
+                    description = projectDesc
                     // If your project has a dedicated site, use its URL here
-                    url = 'https://github.com/xuie0000/android-preview'
+                    url = githubUrl
                     licenses {
                         license {
                             //协议类型，一般默认Apache License2.0的话不用改：
@@ -57,18 +56,16 @@ afterEvaluate {
                     }
                     developers {
                         developer {
-                            id = 'xuie0000'
-                            name = 'xuie0000'
-                            email = 'xuie0000@163.com'
+                            id = developerId
+                            name = developerName
+                            email = developerEmail
                         }
                     }
                     // Version control info, if you're using GitHub, follow the format as seen here
                     scm {
-                        //修改成你的Git地址：
-                        connection = 'https://github.com/xuie0000/AndroidSonatypeLibrary.git'
-                        developerConnection = 'https://github.com/xuie0000/AndroidSonatypeLibrary.git'
-                        //分支地址：
-                        url = 'https://github.com/xuie0000/AndroidSonatypeLibrary/tree/master'
+                        connection = githubUrl
+                        developerConnection = githubUrl
+                        url = githubUrl + '/tree/master'
                     }
 
                 }
@@ -79,7 +76,7 @@ afterEvaluate {
             maven {
                 // This is an arbitrary name, you may also use "mavencentral" or
                 // any other name that's descriptive for you
-                name = "AndroidUtilsLibrary"
+                name = projectName
 
                 def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
                 def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"

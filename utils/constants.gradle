@@ -1,6 +1,6 @@
 ext {
     projectName = 'AndroidSonatypeLibrary'
-    projectDesc = 'Normal Utils Library'
+    projectDesc = 'This is my library, main func is collect some base method to reduce repeat work, quickly published your project.'
 
     githubUrl = 'https://github.com/xuie0000/AndroidSonatypeLibrary'
 
@@ -8,5 +8,7 @@ ext {
     mavenArtifactId = 'util-tools'
     mavenVersion = '1.2.2'
 
-    bintrayOrg = 'xuie0000'
+    developerId = 'xuie0000'
+    developerName = 'Jie Xu'
+    developerEmail = 'xuie0000@163.com'
 }
