@@ -4,11 +4,9 @@ plugins {
     id 'maven-publish'
 }
 
-apply from: 'maven.gradle'
-
 android {
     compileSdk 34
-    namespace "com.xuie0000.utils"
+    namespace "com.xuie0000"
 
     defaultConfig {
         minSdkVersion 23
@@ -22,10 +20,19 @@ android {
         }
     }
 
+    // https://stackoverflow.com/questions/76688772/cannot-publish-android-library-after-updating-gradle-and-the-android-gradle-p
+    publishing {
+        multipleVariants {
+            withJavadocJar()
+            withSourcesJar()
+        }
+    }
 }
+
+apply from: 'maven.gradle'
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.code.gson:gson:2.10.1'
 }
 
