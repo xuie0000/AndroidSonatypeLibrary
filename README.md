@@ -4,7 +4,7 @@
 available on `mavenCentral()`
 
 ```
-implementation 'com.xuie0000:util-tools:1.2.2'
+implementation 'com.xuie0000:util-tools:2.0.0'
 ```
 
 ## Sample
